@@ -6,14 +6,13 @@ import "./style.css";
 import MainAddReceipt from '../MainAddReceipt';
 
 
-export default class HomePageContainer extends Component {
+export default class SelectPageContainer extends Component {
 
     createContainer = () => {
         return(
             <div>
                 <Container fluid className='outer' textAlign='center'>
-                    <Header as='h1' id='header'>Receipt Itemizer</Header>
-                    <MainAddReceipt id="mainButton"/>
+                    Page 2
                 </Container>
             </div>
         );
