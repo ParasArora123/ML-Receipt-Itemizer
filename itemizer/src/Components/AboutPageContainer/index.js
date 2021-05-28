@@ -3,7 +3,7 @@ import {Container, Header} from 'semantic-ui-react';
 
 import { BrowserRouter, Route, Link } from 'react-router-dom';
 import "./style.css";
-import MainAddReceipt from '../MainAddReceipt';
+import MainAddReceipt from '../MainAddReceipt/';
 import NavBar from '../NavBar';
 
 

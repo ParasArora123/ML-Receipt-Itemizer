@@ -1,51 +1,50 @@
 import React, {Component} from 'react';
 import { Button, Icon } from 'semantic-ui-react';
 import { useHistory } from 'react-router-dom';
+import {withRouter} from 'react-router'
 import ImageUploader from 'react-images-upload';
 import "./style.css";
+import SelectPageContainer from '../SelectPageContainer';
 
-export default class MainAddReceipt extends Component {
+const MainAddReceipt = () => {
 
-    constructor(props) {
-        super(props);
-        this.state = { file: null };
-      }
-    onFilechange = ( e ) => {
+    const history = useHistory();
+    var myfile = null;
+
+    const onFilechange = ( e ) => {
         /*Selected files data can be collected here.*/
-        this.setState({file: e.target.files})
-        this.props.history.push({
-            pathname: '/select-page',
-            state: e.target.files // your data array of objects
-          })
-          
-      }
+        myfile = e.target.files;
+        console.log(myfile);
+        history.push({pathname:'/select-page',state:myfile});
+    }
 
 
     
-    fileInputRef = React.createRef();
-    onBtnClick = () => {
+    const fileInputRef = React.createRef();
+    const onBtnClick = () => {
         /*Collecting node-element and performing click*/
-        this.fileInputRef.current.click();
+        fileInputRef.current.click();
       }
 
-    uploadDesign = () => {
+    const uploadDesign = () => {
         
         return (
             <div>
-                <Button animated size='massive' id='buttonStyle' onClick={this.onBtnClick}>
+                <Button animated size='massive' id='buttonStyle' onClick={onBtnClick}>
                     <Button.Content visible>Upload Here</Button.Content>
                     <Button.Content hidden>
                         <Icon name='arrow up' />
                     </Button.Content>
                 </Button>
-                <input ref={this.fileInputRef} type='file' hidden onInput={this.onFilechange} />
+                <input ref={fileInputRef} type='file' hidden onInput={onFilechange} />
             </div>        
         );   
     }
  
-    render() {
-        console.log(this.state.file);
-        return this.uploadDesign();
-        
-    }
+    return(
+        console.log(myfile),
+        uploadDesign()
+    );
 }
+
+export default withRouter(MainAddReceipt);
