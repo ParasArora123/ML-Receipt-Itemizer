@@ -8,39 +8,40 @@ export default class MainAddReceipt extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {
-            file: null
-        };
-    }
+        this.state = { file: null };
+      }
+    onFilechange = ( e ) => {
+        /*Selected files data can be collected here.*/
+        this.setState({file: e.target.files})
+        
+      }
 
-    history = useHistory();
 
-    onButtonClick = e => {
-        this.setState( {file: e.target.files[0]} );
-        history.push("/select-page")
-    };
-
+    
     fileInputRef = React.createRef();
+    onBtnClick = () => {
+        /*Collecting node-element and performing click*/
+        this.fileInputRef.current.click();
+      }
 
     uploadDesign = () => {
         
         return (
             <div>
-                <button type="button" onClick={handleClick}>
-                    Navigate to another route
-                </button>
-                <Button animated size='massive' id='buttonStyle' onClick={() => this.fileInputRef.current.click()}>
+                <Button animated size='massive' id='buttonStyle' onClick={this.onBtnClick}>
                     <Button.Content visible>Upload Here</Button.Content>
                     <Button.Content hidden>
                         <Icon name='arrow up' />
                     </Button.Content>
                 </Button>
-                <input ref={this.fileInputRef} type='file' hidden onChange={this.onButtonClick} />
+                <input ref={this.fileInputRef} type='file' hidden onInput={this.onFilechange} />
             </div>        
         );   
     }
  
     render() {
+        console.log(this.state.file);
         return this.uploadDesign();
+        
     }
 }
