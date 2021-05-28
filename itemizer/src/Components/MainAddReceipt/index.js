@@ -6,6 +6,8 @@ import ImageUploader from 'react-images-upload';
 import "./style.css";
 import SelectPageContainer from '../SelectPageContainer';
 
+
+
 const MainAddReceipt = () => {
 
     const history = useHistory();
