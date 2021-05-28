@@ -13,7 +13,11 @@ export default class MainAddReceipt extends Component {
     onFilechange = ( e ) => {
         /*Selected files data can be collected here.*/
         this.setState({file: e.target.files})
-        
+        this.props.history.push({
+            pathname: '/select-page',
+            state: e.target.files // your data array of objects
+          })
+          
       }
 
 
