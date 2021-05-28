@@ -12,6 +12,7 @@ export default class AboutPageContainer extends Component {
     render() {
         return(
             <div>
+                <NavBar id="nav" />
                 Receipt Itemizer by Paras Arora, Enzo Filangeri, and Isaiah Gama
             </div>
         );
