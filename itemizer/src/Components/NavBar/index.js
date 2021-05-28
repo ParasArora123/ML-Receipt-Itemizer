@@ -11,6 +11,9 @@ export default class NavBar extends Component {
 
     return (
       <Menu borderless>
+        <Menu.Item>
+          <img src='../../../logo192.png' />
+        </Menu.Item>
         <Menu.Item
           name='Home'
           active={activeItem === 'Home'}

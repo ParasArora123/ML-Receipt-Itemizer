@@ -11,7 +11,7 @@ export default class HomePageContainer extends Component {
 
     createContainer = () => {
         return(
-            <div>
+            <div className='outer-div'>
                 <Container fluid className='outer' textAlign='center'>
                     <NavBar id="nav" />
                     <Header as='h1' id='header'>Receipt Itemizer</Header>
