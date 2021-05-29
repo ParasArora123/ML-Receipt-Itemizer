@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Container, Header} from 'semantic-ui-react';
+import {Container, Header, Embed} from 'semantic-ui-react';
 
 import FadeIn from 'react-fade-in';
 import { BrowserRouter, Route, Link } from 'react-router-dom';
@@ -10,6 +10,14 @@ import NavBar from '../NavBar';
 
 export default class AboutPageContainer extends Component {
 
+    EmbedExampleYouTube = () => (
+        <Embed
+          id='dQw4w9WgXcQ'
+          placeholder='/images/image-16by9.png'
+          source='youtube'
+        />
+    )
+
     render() {
         return(
             <div>
@@ -17,6 +25,7 @@ export default class AboutPageContainer extends Component {
                 <NavBar id="nav" />
                 <FadeIn>
                     Receipt Itemizer by Paras Arora, Enzo Filangeri, and Isaiah Gama
+                    {this.EmbedExampleYouTube()}
                 </FadeIn>
             </div>
         );
