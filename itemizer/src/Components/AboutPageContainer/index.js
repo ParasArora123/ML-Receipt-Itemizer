@@ -25,7 +25,7 @@ export default class AboutPageContainer extends Component {
         return(
             <div>
                 
-                <NavBar id="nav" />
+                <NavBar id="nav" active="About"/>
                 <FadeIn>
                     Receipt Itemizer by Paras Arora, Enzo Filangeri, and Isaiah Gama
                     {this.EmbedExampleYouTube()}

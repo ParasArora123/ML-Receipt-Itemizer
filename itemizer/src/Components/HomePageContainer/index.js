@@ -13,7 +13,7 @@ export default class HomePageContainer extends Component {
     createContainer = () => {
         return(
             <div className='outer-div'>
-                <NavBar id="nav" />
+                <NavBar id="nav" active="Home" />
                 <FadeIn>
                     <Header as='h1' id='header1'>Receipt Itemizer</Header>
                     <Header as='h2' id='header2'>Submit Your Receipts to Generate a Beautiful Invoice</Header>
