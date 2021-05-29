@@ -1,24 +1,51 @@
 import React, {Component} from 'react';
 import {Container, Header} from 'semantic-ui-react';
+import { Button, Icon } from 'semantic-ui-react';
 
 import { BrowserRouter, Route, Link, withRouter } from 'react-router-dom';
 import "./style.css";
 import MainAddReceipt from '../MainAddReceipt';
+import ReceiptPreview from '../ReceiptPreview';
+import NavBar from '../NavBar';
 
 
 class SelectPageContainer extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {files: [URL.createObjectURL(this.props.location.state[0])]}
+    }
 
     createContainer = () => {
+        const onFilechange = ( e ) => {
+            /*Selected files data can be collected here.*/
+            if(e.target.files.length !== 0){
+                this.setState({files: this.state.files.concat(URL.createObjectURL(e.target.files[0]))})
+            }
+        }
+        
+        const fileInputRef = React.createRef();
+        const onBtnClick = () => {
+            /*Collecting node-element and performing click*/
+            fileInputRef.current.click();
+          }
         const history = this.props;
         console.log(history.location.state[0]);
+        const previews = (this.state.files).map((element) => 
+            <ReceiptPreview file = {element}/>
+        )
         return(
             <div>
-                <Container fluid className='outer' textAlign='center'>
-                    Page 2
-                </Container>
+                <NavBar id='nav'/>
                 <div>
-                    <img src = {URL.createObjectURL(history.location.state[0])}/>
-                    {history.location.state[0].name}
+                    <Button circular id='buttonStyle' onClick={onBtnClick}>
+                        <Button.Content visible>+</Button.Content>
+                        <Button.Content hidden>
+                        </Button.Content>
+                    </Button>
+                    <input ref={fileInputRef} type='file' hidden onInput={onFilechange} />
+                </div>
+                <div className='previews-container'>
+                    {previews}   
                 </div>
             </div>
 

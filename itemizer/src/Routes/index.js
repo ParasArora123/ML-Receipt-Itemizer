@@ -11,7 +11,6 @@ const Routes = () => {
                     <Route path='/' exact >
                         <HomePage/>
                     </Route>
-
                     <Route path='/select-page' exact >
                         <SelectPage/>
                     </Route>
