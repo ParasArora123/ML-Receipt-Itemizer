@@ -6,16 +6,19 @@ import { BrowserRouter, Route, Link } from 'react-router-dom';
 import "./style.css";
 import MainAddReceipt from '../MainAddReceipt/';
 import NavBar from '../NavBar';
-
+import ReactPlayer from "react-player"
 
 export default class AboutPageContainer extends Component {
 
     EmbedExampleYouTube = () => (
-        <Embed
-          id='dQw4w9WgXcQ'
-          placeholder='/images/image-16by9.png'
-          source='youtube'
-        />
+        <div>
+            <ReactPlayer
+            url="https://www.youtube.com/embed/dQw4w9WgXcQ&autoplay=1"
+            playing = {true}
+            width = {2000}
+            height = {800}
+            />
+        </div>
     )
 
     render() {
