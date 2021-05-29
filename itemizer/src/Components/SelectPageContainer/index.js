@@ -38,9 +38,7 @@ class SelectPageContainer extends Component {
         console.log(history.location.state[0]);
         const previews = (this.state.files).map((element) => 
             <div className='receipt-container'>
-                <div>
-                    <Button size='mini' color='red' floated='right' compact onClick={() => onBtnClickRemove(element)}>x</Button>
-                </div>
+                <button className='delete-btn' onClick={() => onBtnClickRemove(element)}>X</button>
                 <ReceiptPreview file = {element}/>
             </div>
         )
@@ -48,7 +46,7 @@ class SelectPageContainer extends Component {
             <div>
                 <NavBar id='nav'/>
                 <div>
-                    <Button circular id='buttonStyle' onClick={onBtnClickAdd}>
+                    <Button circular id='buttonStyle' floated='right' onClick={onBtnClickAdd}>
                         <Button.Content visible>+</Button.Content>
                     </Button>
                     <input ref={fileInputRef} type='file' hidden onInput={onFilechange} />

@@ -3,9 +3,17 @@
     justify-content: center;
 }
 #buttonStyle {
+    margin-right: 1%;
     background-color: #E31837;
     color: white;
     box-shadow: 2px 2px 7px #888888;
+}
+
+.delete-btn {
+    color: red;
+    background-color: whitesmoke;
+    border: none;
+    margin-left: 150px;
 }
 .receipt-container {
     border-style: solid;
