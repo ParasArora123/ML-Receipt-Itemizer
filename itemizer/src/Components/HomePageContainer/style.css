@@ -2,14 +2,24 @@ html, body {
     background: rgb(251, 240, 227);
     height: 100%;
 }
-.outer {
+.outer-div {
+    align-items: center;
+    text-align: center;
+    justify-content: center;
 
 }
 
-#header {
+#header2 {
+    margin-top: .5%;
+    margin-bottom: 1.5%;
+    font-weight: lighter;
+}
+
+#header1 {
+    font-size: 40pt;
     margin-top: 3%;
 }
 
-#mainButton {
-    margin-top: 1%;
+.mainButton {
+    text-align: center;
 }

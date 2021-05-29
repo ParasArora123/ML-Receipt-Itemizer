@@ -13,13 +13,12 @@ export default class HomePageContainer extends Component {
     createContainer = () => {
         return(
             <div className='outer-div'>
-                <Container fluid className='outer' textAlign='center'>
                 <NavBar id="nav" />
-                    <FadeIn>
-                        <Header as='h1' id='header'>Receipt Itemizer</Header>
-                        <MainAddReceipt id="mainButton"/>
-                    </FadeIn>
-                </Container>
+                <FadeIn>
+                    <Header as='h1' id='header1'>Receipt Itemizer</Header>
+                    <Header as='h2' id='header2'>Submit Your Receipts to Generate a Beautiful Invoice</Header>
+                    <MainAddReceipt id="mainButton"/>
+                </FadeIn>
             </div>
         );
     }
