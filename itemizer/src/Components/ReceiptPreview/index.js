@@ -11,9 +11,7 @@ export default class ReceiptPreview extends Component {
 
     render() {
         return(
-            <div className='receipt-container'>
-                <img src = {this.props.file}/>
-            </div>
+            <img src = {this.props.file}/>
         );
     }
 }

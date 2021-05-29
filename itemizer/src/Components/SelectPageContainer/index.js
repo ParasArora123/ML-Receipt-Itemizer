@@ -24,23 +24,32 @@ class SelectPageContainer extends Component {
         }
         
         const fileInputRef = React.createRef();
-        const onBtnClick = () => {
+
+        const onBtnClickAdd = () => {
             /*Collecting node-element and performing click*/
             fileInputRef.current.click();
-          }
+        }
+
+        const onBtnClickRemove = (elem) => {
+            this.setState({files: this.state.files.filter((item) => item !== elem)})
+        }
+
         const history = this.props;
         console.log(history.location.state[0]);
         const previews = (this.state.files).map((element) => 
-            <ReceiptPreview file = {element}/>
+            <div className='receipt-container'>
+                <div>
+                    <Button size='mini' color='red' floated='right' compact onClick={() => onBtnClickRemove(element)}>x</Button>
+                </div>
+                <ReceiptPreview file = {element}/>
+            </div>
         )
         return(
             <div>
                 <NavBar id='nav'/>
                 <div>
-                    <Button circular id='buttonStyle' onClick={onBtnClick}>
+                    <Button circular id='buttonStyle' onClick={onBtnClickAdd}>
                         <Button.Content visible>+</Button.Content>
-                        <Button.Content hidden>
-                        </Button.Content>
                     </Button>
                     <input ref={fileInputRef} type='file' hidden onInput={onFilechange} />
                 </div>

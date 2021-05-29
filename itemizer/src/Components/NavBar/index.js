@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Menu } from 'semantic-ui-react'
+import { Menu, MenuItem } from 'semantic-ui-react'
 import {withRouter} from 'react-router-dom'
 
 class NavBar extends Component {
@@ -13,6 +13,9 @@ class NavBar extends Component {
 
     return (
       <Menu borderless>
+        <Menu.Item>
+          <img src='../../logo192.png' />
+        </Menu.Item>
         <Menu.Item
           name='Home'
           active={activeItem === 'Home'}
