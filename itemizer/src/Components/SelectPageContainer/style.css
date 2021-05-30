@@ -8,14 +8,21 @@
     color: white;
     box-shadow: 2px 2px 7px #888888;
 }
-
-
-.delete-btn {
-    color: red;
-    background-color: whitesmoke;
-    border: none;
-    margin-left: 150px;
+#add-btn:hover {
+    background-color: black;
 }
+
+
+#delete-btn {
+    color: #E31837;
+    border: 0px;
+    margin-left: 155px;
+    cursor: pointer;
+    display: none;
+    padding-bottom: 20px;
+}
+
+
 .receipt-container {
     border-style: solid;
     border-color: whitesmoke;
@@ -24,6 +31,17 @@
     padding-right: 20px;
     padding-left: 20px;
     padding-bottom: 20px;
+    padding-top: 20px;
     margin: 20px;
     box-shadow: 2px 2px 7px #888888
+}
+
+.receipt-container:hover #delete-btn {
+    display: block;
+}
+
+.receipt-container:hover {
+    padding-top: 0px;
+    background-color: white;
+    border-color: white;
 }

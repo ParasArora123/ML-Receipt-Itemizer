@@ -23,6 +23,14 @@ export default class HomePageContainer extends Component {
         );
     }
 
+    // createFooter = () => {
+    //     return (
+    //         <div className='footer'>
+
+    //         </div>
+    //     )
+    // }
+
     render() {
         return this.createContainer();
     }
