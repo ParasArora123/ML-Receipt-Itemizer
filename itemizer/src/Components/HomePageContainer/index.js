@@ -10,6 +10,16 @@ import FadeIn from 'react-fade-in'
 
 export default class HomePageContainer extends Component {
 
+    createFooter = () => {
+        return (
+            <footer>
+                    <div class="ui container">
+                        <p id="footer-text">© Receipt Itemizer 2021 ® - Paras Arora | Enzo Filangeri | Isaiah Gama</p>
+                    </div>
+            </footer>
+        )
+    }
+
     createContainer = () => {
         return(
             <div className='outer-div'>
@@ -19,17 +29,12 @@ export default class HomePageContainer extends Component {
                     <Header as='h2' id='header2'>Submit Your Receipts to Generate a Beautiful Invoice</Header>
                     <MainAddReceipt id="mainButton"/>
                 </FadeIn>
+                {this.createFooter()}
             </div>
         );
     }
 
-    // createFooter = () => {
-    //     return (
-    //         <div className='footer'>
-
-    //         </div>
-    //     )
-    // }
+    
 
     render() {
         return this.createContainer();
