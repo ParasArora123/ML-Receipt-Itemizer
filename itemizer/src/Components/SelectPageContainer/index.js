@@ -6,6 +6,7 @@ import { BrowserRouter, Route, Link, withRouter } from 'react-router-dom';
 import "./style.css";
 import MainAddReceipt from '../MainAddReceipt';
 import ReceiptPreview from '../ReceiptPreview';
+import AddNamesSidebar from '../AddNamesSidebar';
 import NavBar from '../NavBar';
 
 
@@ -42,20 +43,23 @@ class SelectPageContainer extends Component {
                 <ReceiptPreview file = {element}/>
             </div>
         )
+        
         return(
-            <div>
+            <div >
                 <NavBar id='nav'/>
-                <div>
-                    <button class="circular large ui red right floated icon button" onClick={onBtnClickAdd} id='add-btn'>
-                        <i class="plus icon"></i>
-                    </button>
-                    <input ref={fileInputRef} type='file' hidden onInput={onFilechange} />
-                </div>
-                <div className='previews-container'>
-                    {previews}   
+                <div id='outer-container'>
+                    <div id='add-names'>
+                        <AddNamesSidebar names={'hi'} header='ADD NAMES' />
+                    </div>
+                    <div>
+                        <button class="circular large ui red right floated icon button" onClick={onBtnClickAdd} id='add-btn'>
+                            <i class="plus icon"></i>
+                        </button>
+                        <input ref={fileInputRef} type='file' hidden onInput={onFilechange} />
+                    </div>
+                    {previews}
                 </div>
             </div>
-
         );
     }
 
